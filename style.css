@@ -15,9 +15,13 @@
 .text {
     display: flex;
     justify-content: right;
+    align-items: center;
+    height: 4rem;
     margin: 0rem;
-    background-color: aqua;
-    font-size: 3rem;
+    background-color: lightblue;
+    font-size: 1.5rem;
+    padding-right: 0.5rem;
+    padding-left: 0.5rem;
 }
 
 .keys {
@@ -73,4 +77,8 @@
     margin: 0rem;
     width: 4rem;
     height: 4rem;
+}
+
+button:hover {
+    filter: brightness(125%);
 }
