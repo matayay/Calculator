@@ -15,11 +15,19 @@ let num1;
 let num2;
 let operation;
 let display_value = "";
+let just_calculated = false;
 
 // Number keys and dot key.
 for ( let key of nums )
 {
     key.addEventListener('click', () => {
+        if ( just_calculated )
+        {
+            clear();
+            display_value = "";
+            just_calculated = false;
+        }
+
         if ( key.className === 'dot' )
         {
             if ( !dotUsed(display_value) )
@@ -243,6 +251,7 @@ for ( let key of operators )
             num1 = null;
             num2 = null;
             operation = null;
+            just_calculated = true;
         }
     });
 }
