@@ -63,8 +63,21 @@ for ( let key of misc_keys )
         else if ( key.className === 'negative' )
         {
             if ( getDisplay() != '' && getDisplay().length < 20 )
-            {
-                toggleNegative();
+            {   
+                let num;
+
+                if ( dotUsed(display_value) )
+                {
+                    num = parseFloat(getDisplay());
+                }
+
+                else if ( !dotUsed(display_value) )
+                {
+                    num = parseInt(getDisplay());
+                }
+
+                num *= -1;
+                displayCalculation(num.toString());
             }
 
             if ( display_value != "" )
@@ -162,6 +175,11 @@ for ( let key of operators )
                     {
                         result = Math.round(result);
                     }
+
+                    if ( result.toString().length > 20 )
+                    {
+                        result = result.toPrecision(12);
+                    }
                     
                     displayCalculation(result.toString());
                 }
@@ -212,6 +230,11 @@ for ( let key of operators )
                 if ( result.toString().length > 20 )
                 {
                     result = Math.round(result);
+                }
+
+                if ( result.toString().length > 20 )
+                {
+                    result = result.toPrecision(12);
                 }
                 
                 displayCalculation(result.toString());

@@ -35,26 +35,6 @@ function clear()
     text.textContent = '';
 }
 
-function toggleNegative()
-{
-    let num;
-    const text = document.querySelector('.text');
-    
-    if ( dotUsed )
-    {
-        num = parseFloat(text.textContent);
-    }
-
-    else if ( !dotUsed )
-    {
-        num = parseInt(text.textContent);
-    }
-
-    num = num * -1;
-
-    text.textContent = num.toString();
-}
-
 function displayCalculation( string )
 {
     const text = document.querySelector('.text');
