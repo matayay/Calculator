@@ -31,10 +31,12 @@
 .input {
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
 
 .misc button {
     background-color: lightgray;
+    color: black;
     font-size: 1.5rem;
     font-weight: bold;
     margin: 0rem;
